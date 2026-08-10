@@ -1,25 +1,25 @@
 class Luxc < Formula
   desc "A small teaching language that runs anywhere and transpiles to Rust, Swift, and Go"
   homepage "https://anderix.com/lux/"
-  version "0.19.15"
+  version "0.19.16"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/anderix/lux/releases/download/v0.19.15/luxc-aarch64-apple-darwin.tar.xz"
-      sha256 "65d2aa469e99a9d980cc98970c948e04fb77f20848d15b60e0e71e638e0946c7"
+      url "https://github.com/anderix/lux/releases/download/v0.19.16/luxc-aarch64-apple-darwin.tar.xz"
+      sha256 "8ec5bd72fe68f81b7fb0d63ae38c75400bc023e11afc591706a04f92d761e81e"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/anderix/lux/releases/download/v0.19.15/luxc-x86_64-apple-darwin.tar.xz"
-      sha256 "531609e5a76a8828f75f7a5a4f0b80767147612146c65eb014e45ecb4589e239"
+      url "https://github.com/anderix/lux/releases/download/v0.19.16/luxc-x86_64-apple-darwin.tar.xz"
+      sha256 "a2f5b57cc37543c2e95b6e844934fe56a8c0b1e4b64adfa87bb2a0081ae2c156"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/anderix/lux/releases/download/v0.19.15/luxc-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "b3e52d14210aed380a56ceb3308da287b29f9731108726433882cb0305747666"
+      url "https://github.com/anderix/lux/releases/download/v0.19.16/luxc-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "993685d473dc3ff3c989a82f0ed05cfcdefeaf9739e4a1f046f820b6910c1dae"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/anderix/lux/releases/download/v0.19.15/luxc-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "cf07256abec4e0999f42400fe5e8648918a88a884b64658fd264f7db67a67414"
+      url "https://github.com/anderix/lux/releases/download/v0.19.16/luxc-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "b76f25536b7238e5e04577679e21be11c4c82f775d861c35e357976f4d55e5fb"
     end
   end
   license "MIT"
