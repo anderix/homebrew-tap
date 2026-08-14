@@ -1,25 +1,25 @@
 class Luxc < Formula
   desc "A small teaching language that runs anywhere and transpiles to Rust, Swift, and Go"
   homepage "https://anderix.com/lux/"
-  version "0.19.16"
+  version "0.19.17"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/anderix/lux/releases/download/v0.19.16/luxc-aarch64-apple-darwin.tar.xz"
-      sha256 "8ec5bd72fe68f81b7fb0d63ae38c75400bc023e11afc591706a04f92d761e81e"
+      url "https://github.com/anderix/lux/releases/download/v0.19.17/luxc-aarch64-apple-darwin.tar.xz"
+      sha256 "7edd9bf76d1d193ea142a18f040d17bba337acc3e865f2d47930f86edd84aaa7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/anderix/lux/releases/download/v0.19.16/luxc-x86_64-apple-darwin.tar.xz"
-      sha256 "a2f5b57cc37543c2e95b6e844934fe56a8c0b1e4b64adfa87bb2a0081ae2c156"
+      url "https://github.com/anderix/lux/releases/download/v0.19.17/luxc-x86_64-apple-darwin.tar.xz"
+      sha256 "bb4d4dc049133823b2f09210e7d3a0fb2a37ae5000ed3602ff67d245f30bf8ef"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/anderix/lux/releases/download/v0.19.16/luxc-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "993685d473dc3ff3c989a82f0ed05cfcdefeaf9739e4a1f046f820b6910c1dae"
+      url "https://github.com/anderix/lux/releases/download/v0.19.17/luxc-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "c24e008cea05b2a720811a2783481983864dab4c21e42ea4cb75d7b84bea8ae4"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/anderix/lux/releases/download/v0.19.16/luxc-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "b76f25536b7238e5e04577679e21be11c4c82f775d861c35e357976f4d55e5fb"
+      url "https://github.com/anderix/lux/releases/download/v0.19.17/luxc-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "038b59e20d246f2edc86f1bc27266a0f725804edfa0acad2ae8c40e06e6aac0b"
     end
   end
   license "MIT"
@@ -48,10 +48,18 @@ class Luxc < Formula
   end
 
   def install
-    bin.install "lux" if OS.mac? && Hardware::CPU.arm?
-    bin.install "lux" if OS.mac? && Hardware::CPU.intel?
-    bin.install "lux" if OS.linux? && Hardware::CPU.arm?
-    bin.install "lux" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "lux"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "lux"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "lux"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "lux"
+    end
 
     install_binary_aliases!
 
